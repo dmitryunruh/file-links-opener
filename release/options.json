@@ -1,0 +1,4 @@
+{
+  "page_filter": ["file:///*"],
+  "link_filter": ["*.htm", "*.html", "*.htm#*", "*.html#*"]
+}

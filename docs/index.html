@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>File Links Opener</title>
+  <link rel="stylesheet" href="flo-doc.css">
+  <script src="flo-doc.js"></script>
+</head>
+<body onload="on_body_loaded();">
+
+<div id="idDivTOC"></div>
+
+<div id="idDivContent">
+
+<h1>File Links Opener</h1>
+
+<select id="idSelectLanguage"></select>
+
+<h2>Description</h2>
+
+<p>File Links Opener is an extension for web browsers that allows you to open links to local files and folders (file:///) in the system file manager or associated application.</p>
+
+<p>The main purpose of this extension is to provide transparent access to files and folders located on local or network drives from a web page opened in a browser.</p>
+
+<p>Usage examples:</p>
+
+<ul>
+  <li>A home or corporate electronic library with a web interface.</li>
+  <li>An internal (home or corporate) website with links to files and folders hosted on local or network drives.</li>
+  <li>A corporate database with a web interface containing links to files and folders located on network drives.</li>
+</ul>
+
+<h2>Features</h2>
+
+<p>The ability to specify the addresses of the sites to which the extension will be applied.</p>
+
+<p>The ability to specify which files (by extension) will be opened in the system file manager or associated application, and which ones the web browser will try to open on its own.</p>
+
+<p>The ability to centrally configure all instances of the extension. This allows, for example, the system administrator to set extension parameters for all users through a single external configuration file.</p>
+
+<p>Internationalization. Full support for the following languages: English, Russian. <i>The list may be expanded in future versions.</i></p>
+
+<p>Open source code.</p>
+
+<h2>Notes</h2>
+
+<p>For the extension to work, you must additionally install an intermediate application that allows the extension to interact with native applications of the operating system.</p>
+
+<p>Currently, the following web browsers are supported: Google Chrome, Microsoft Edge, Mozilla Firefox, Yandex Browser. <i>The list may be expanded in future versions.</i></p>
+
+<p>The following operating systems are currently supported: Microsoft Windows (7 and above). <i>The list may be expanded in future versions.</i></p>
+
+<p style="display: none;">Full documentation on installation, configuration and use is available at the link <a href="https://dmitryunruh.github.io/file-links-opener/docs/index.html">https://dmitryunruh.github.io/file-links-opener/docs/index.html</a></p>
+
+<h2>Installing</h2>
+
+<h3>Step 1</h3>
+
+<p>Install the File Links Opener extension from the web browser extension store:</p>
+
+<table>
+  <tr>
+    <th>Extension web store</th>
+  </tr>
+  <tr>
+    <td><a href="https://chromewebstore.google.com/detail/file-links-opener/pbgadmfpckgkkofhjelocdbokcgjcdee">Google Chrome</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://microsoftedge.microsoft.com/addons/detail/file-links-opener/finijmafknncfpbcbnhpoflfopmjamep">Microsoft Edge</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://addons.mozilla.org/addon/file-links-opener/">Mozilla Firefox</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://chromewebstore.google.com/detail/file-links-opener/pbgadmfpckgkkofhjelocdbokcgjcdee">Yandex Browser</a> *</td>
+  </tr>
+</table>
+
+<p><i>* Yandex Browser does not have its own extension store. The Google Chrome extension web store is used.</i></p>
+
+<h3>Step 2</h3>
+
+<p>Allow the extension to open file links (not required for Firefox):</p>
+
+<ul>
+  <li>Chrome: Extensions > Manage Extensions > File Links Opener > Details > Allow access to file URLs.</li>
+  <li>Edge: Extensions > Manage Extensions > File Links Opener > Details > Allow access to file URLs.</li>
+  <li>Yandex: Extensions > File Links Opener > Learn more > Allow opening file links.</li>
+</ul>
+
+<h3>Step 3</h3>
+
+<p>Install an intermediate application (native messaging host) that allows the Extension to interact with native applications.</p>
+
+<p>Select, download and install the intermediate application using the link from the table below, depending on the operating system and the availability of the Python programming language interpreter on your system.</p>
+
+<table>
+  <tr>
+    <th>Operating system</th><th>zip</th><th>exe</th><th>exe + py</th>
+  </tr>
+  <tr>
+    <td>Microsoft Windows 7 (and above)</td>
+    <td><a href="https://raw.github.com/dmitryunruh/file-links-opener/main/release/flomh-0.7.zip">flomh-0.7.zip</a></td>
+    <td><a href="https://raw.github.com/dmitryunruh/file-links-opener/main/release/flomh-0.7-x64.exe">flomh-0.7-x64.exe</a></td>
+    <td><a href="https://raw.github.com/dmitryunruh/file-links-opener/main/release/flomh-0.7-x64-py.exe">flomh-0.7-x64-py.exe</a></td>
+  </tr>
+</table>
+
+<p>You will need administrator rights to install.</p>
+
+<p>The intermediate application can be installed in "silent" mode (without showing the graphical installer). To do this, run the installer with the /S key. For example:</p>
+
+<pre>flomh-0.7-x64.exe /S</pre>
+
+<h2>Options</h2>
+
+<p>The extension parameters can be set in one of two ways: in the extension parameters of the web browser or through an external configuration file.</p>
+
+<p>The external configuration file takes precedence over the extension options in the web browser. If it is set, the extension options in the web browser will not be available.</p>
+
+<h3>Configuring the extension in a web browser</h3>
+
+<p>This method is suitable if you use a single instance of the extension.</p>
+
+<p>To configure the extension in a web browser, open:</p>
+
+<ul>
+  <li>Chrome: Extensions > Manage Extensions > File Links Opener > Details > Extension options.</li>
+  <li>Edge: Extensions > Manage Extensions > File Links Opener > Details > Extension options.</li>
+  <li>Firefox: Add-ons and themes > File Links Opener > Options.</li>
+  <li>Yandex: Extensions > File Links Opener > Learn more > All settings.</li>
+</ul>
+
+<p>In the page filter, specify the addresses of the pages/sites to which the Extension will be applied.</p>
+
+<p>In the link filter, specify the link addresses that will NOT be processed by the Extension. The web browser will try to open such links on its own.</p>
+
+<p>The filters can use the wildcard character * (asterisk), which means any sequence of characters.</p>
+
+<p>A line break is used as a separator in filters.</p>
+
+<h3>Configuring the extension via an external configuration file</h3>
+
+<p>This method is suitable for system administrators to centrally configure all extensions, regardless of the browser used.</p>
+
+<p>The external configuration file is a utf-8 encoded json file named options.json located in the directory of the intermediate application (File Links Opener Messaging Host) and having the following structure:</p>
+
+<pre>{
+  "page_filter": ["file:///*"],
+  "link_filter": ["*.htm", "*.html", "*.htm#*", "*.html#*"]
+}</pre>
+
+<p>In the page filter (page_filter), specify the addresses of the pages/sites to which the Extension will be applied.</p>
+
+<p>In the link filter (link_filter), specify the link addresses that will NOT be processed by the Extension. The web browser will try to open such links on its own.</p>
+
+<p>The filters can use the wildcard character * (asterisk), which means any sequence of characters.</p>
+
+<p>All values must be enclosed in double quotes and separated by commas.</p>
+
+<p>The template of the external configuration file can be downloaded from the link <a href="https://raw.github.com/dmitryunruh/file-links-opener/main/release/options.json">options.json</a></p>
+
+<h3>Default parameter values</h3>
+
+<p>The default value for the page filter is "file:///*", which means that the Extension will be applied to pages opened directly from disk.</p>
+
+<p>The dafault values for the link filter are htm/html pages (with and without anchors). This means that html pages on such links will not be opened in the associated application, but in the same browser in which the page containing such a link is viewed.</p>
+
+<h3>Other value variants</h3>
+
+<p>If you want the extension to work on all sites, just specify the wildcard character * (asterisk) as the value in the page filter.</p>
+
+<h2>Using</h2>
+
+<p>The File Links Opener extension will only work on those pages whose addresses match the templates specified in the page filter in the options.</p>
+
+<p>When clicking on a suitable link*, its address is sent to the intermediate application, which checks the existence of a file or folder at the specified address and does one of the following:</p>
+
+<p>If the link address points to a folder, if will be opened in the file manager.</p>
+
+<p>If the link address points to a file, it will be opened in the associated application (unless the flo_select_in_fm link parameter is specified).</p>
+
+<p>If neither the file nor the folder at the link address is found, a message will be displayed stating that the corresponding path has not been found.</p>
+
+<p><i>* A suitable link is a link whose address starts with "file:///" and does NOT match any of the templates specified in the link filter in the options.</i></p>
+
+<h3>Additional link attribute flo_select_in_fm</h3>
+
+<p>If you add an additional <i>flo_select_in_fm</i> attribute to the link, the object on the link will not be opened. Instead, the file manager will be opened and the object by reference will be selected in it.</p>
+
+<p>For example:</p>
+
+<pre>&lt;a href="file:///path/to/file" <i>flo_select_in_fm</i>&gt;link&lt;/a&gt;</pre>
+
+<h2>Feedback</h2>
+
+<p>The author of the File Links Opener extension is Dmitry Unruh.</p>
+
+<p>You can send error messages and suggestions to the email address <a href="mailto:dmitryunruh@googlemail.com&subject=file-links-opener">dmitryunruh@googlemail.com</a>.</p>
+
+</div>
+
+</body>
+</html>
